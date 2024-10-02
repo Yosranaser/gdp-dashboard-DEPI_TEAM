@@ -66,11 +66,17 @@ def main():
                             tech_support_mapping[tech_support], streaming_tv_mapping[streaming_tv],
                             streaming_movies_mapping[streaming_movies]]])
 
-  prediction = model.predict(input_data)  
- if prediction[0] == 1:
-    st.error("The model predicts that this customer is likely to churn.")
-else:
-    st.success("The model predicts that this customer is unlikely to churn.")
+if st.button("Predict Churn"):
+    # Ensure that the input has 19 features
+    if input_data.shape[1] == 19:
+        prediction = model.predict(input_data)
+        if prediction[0] == 1:
+            st.error("The model predicts that this customer is likely to churn.")
+        else:
+            st.success("The model predicts that this customer is unlikely to churn.")
+    else:
+        st.error("Error: The input data does not have the correct number of features (19).")
+
       
 
 
