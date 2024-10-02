@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+import streamlit as st
 # Assuming `model` is your trained GradientBoostingClassifier model
 importances = model.feature_importances_
 
