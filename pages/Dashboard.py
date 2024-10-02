@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
-# Assuming `model` is your trained GradientBoostingClassifier model
+with open('model (3).pkl', 'rb') as file:
+    model = pickle.load(file)
 importances = model.feature_importances_
 
 # Get feature names (e.g., you have these stored in a list)
