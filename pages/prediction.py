@@ -13,14 +13,15 @@ def main():
     # Input fields for 19 features
     st.write("### Please provide the following details:")
 
-    # Input fields
+    # Example fields (replace these with the actual features you trained the model with)
     tenure = st.number_input("Tenure (months)", min_value=0, max_value=100)
     monthly_charges = st.number_input("Monthly Charges", min_value=0.0)
     total_charges = st.number_input("Total Charges", min_value=0.0)
     contract = st.selectbox("Contract Type", ['Month-to-month', 'One year', 'Two year'])
     paperless_billing = st.selectbox("Paperless Billing", ['Yes', 'No'])
     payment_method = st.selectbox("Payment Method", ['Electronic check', 'Mailed check', 'Bank transfer', 'Credit card'])
-
+    
+    # Add other features here...
     senior_citizen = st.selectbox("Is the customer a senior citizen?", ['Yes', 'No'])
     gender = st.selectbox("Gender", ['Male', 'Female'])
     partner = st.selectbox("Has a partner", ['Yes', 'No'])
@@ -35,11 +36,9 @@ def main():
     streaming_tv = st.selectbox("Streaming TV", ['Yes', 'No', 'No internet service'])
     streaming_movies = st.selectbox("Streaming Movies", ['Yes', 'No', 'No internet service'])
 
-    # Categorical data mappings
+    # Convert categorical data into numerical format
     contract_mapping = {'Month-to-month': 0, 'One year': 1, 'Two year': 2}
-    payment_method_mapping = {
-        'Electronic check': 0, 'Mailed check': 1, 'Bank transfer': 2, 'Credit card': 3
-    }
+    payment_method_mapping = {'Electronic check': 0, 'Mailed check': 1, 'Bank transfer': 2, 'Credit card': 3}
     paperless_billing_mapping = {'Yes': 1, 'No': 0}
     senior_citizen_mapping = {'Yes': 1, 'No': 0}
     gender_mapping = {'Male': 1, 'Female': 0}
@@ -55,7 +54,7 @@ def main():
     streaming_tv_mapping = {'Yes': 1, 'No': 0, 'No internet service': 2}
     streaming_movies_mapping = {'Yes': 1, 'No': 0, 'No internet service': 2}
 
-    # Prepare input array
+    # Prepare the input data (19 features)
     input_data = np.array([[tenure, monthly_charges, total_charges,
                             contract_mapping[contract], paperless_billing_mapping[paperless_billing],
                             payment_method_mapping[payment_method], senior_citizen_mapping[senior_citizen],
@@ -66,19 +65,19 @@ def main():
                             tech_support_mapping[tech_support], streaming_tv_mapping[streaming_tv],
                             streaming_movies_mapping[streaming_movies]]])
 
-if st.button("Predict Churn"):
-    # Ensure that the input has 19 features
-    if input_data.shape[1] == 19:
-        prediction = model.predict(input_data)
-        if prediction[0] == 1:
-            st.error("The model predicts that this customer is likely to churn.")
+    # Check the shape of the input data to confirm 19 features
+    st.write(f"Input Data Shape: {input_data.shape}")
+
+    if st.button("Predict Churn"):
+        # Ensure input data has 19 features
+        if input_data.shape[1] == 19:
+            prediction = model.predict(input_data)
+            if prediction[0] == 1:
+                st.error("The model predicts that this customer is likely to churn.")
+            else:
+                st.success("The model predicts that this customer is unlikely to churn.")
         else:
-            st.success("The model predicts that this customer is unlikely to churn.")
-    else:
-        st.error("Error: The input data does not have the correct number of features (19).")
-
-      
-
+            st.error("Error: The input data does not have the correct number of features (19).")
 
 if __name__ == "__main__":
     main()
