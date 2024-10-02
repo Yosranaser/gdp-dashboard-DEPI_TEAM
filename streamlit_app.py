@@ -1,5 +1,6 @@
 
 import streamlit as st
+from PIL import Image
 def main():
     # Set the title of the app
     st.title("Welcome to the Churn Prediction App")
