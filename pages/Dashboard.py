@@ -17,7 +17,11 @@ feature_names = ['tenure', 'monthly_charges', 'total_charges', 'contract', 'pape
                  'device_protection', 'tech_support', 'streaming_tv', 'streaming_movies']
 
 # Create a DataFrame for easy plotting
-importances = ['tenure', 'monthly_charges', 'total_charges', 'contract', 'paperless_billing']
+importances =  ['Tenure', 'Monthly Charges', 'Total Charges', 'Contract Type', 'Paperless Billing', 
+            'Payment Method', 'Senior Citizen', 'Gender', 'Partner', 'Dependents', 
+            'Phone Service', 'Multiple Lines', 'Internet Service', 'Online Security', 
+            'Online Backup', 'Device Protection', 'Tech Support', 'Streaming TV', 
+            'Streaming Movies']
 feature_importance_df = pd.DataFrame({
     'Feature': feature_names,
     'Importance': importances
