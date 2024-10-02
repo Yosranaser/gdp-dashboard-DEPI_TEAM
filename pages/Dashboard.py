@@ -1,9 +1,19 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st 
-with open(https://github.com/Yosranaser/gdp-dashboard-DEPI_TEAM/blob/main/pages/model%20(3).pkl, 'rb') as file:
+
+import pickle
+
+
+
+
+
+with open('model (3).pkl', 'rb') as file:
     model = pickle.load(file)
-importances = model.feature_importances_
+
+# Now you can use 'model' in your app
+
+
 
 # Get feature names (e.g., you have these stored in a list)
 feature_names = ['tenure', 'monthly_charges', 'total_charges', 'contract', 'paperless_billing', 
