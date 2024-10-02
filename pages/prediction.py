@@ -66,14 +66,12 @@ def main():
                             tech_support_mapping[tech_support], streaming_tv_mapping[streaming_tv],
                             streaming_movies_mapping[streaming_movies]]])
 
-    st.write(f"Input Data: {input_data}")
-    st.write(f"Input Data Shape: {input_data.shape}")  # Debugging step
-        if st.button("Predict Churn"):
-           if prediction[0] == 1:
-                st.error("The model predicts that this customer is likely to churn.")
-            else:
-                st.success("The model predicts that this customer is unlikely to churn.")
-        else:
+  prediction = model.predict(input_data)  
+ if prediction[0] == 1:
+    st.error("The model predicts that this customer is likely to churn.")
+else:
+    st.success("The model predicts that this customer is unlikely to churn.")
+      
 
 
 if __name__ == "__main__":
