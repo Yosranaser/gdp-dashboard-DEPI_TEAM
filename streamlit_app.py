@@ -3,7 +3,10 @@ import streamlit as st
 def main():
     # Set the title of the app
     st.title("Welcome to the Churn Prediction App")
+    image = Image.open('68747470733a2f2f7331363335332e7063646e2e636f2f77702d636f6e74656e742f75706c6f6164732f323031382f30362f436875726e2e706e67.png')
 
+# Display the image in Streamlit
+    st.image(image, caption="Churn Prediction", use_column_width=True)
     # Introduction section
     st.write("""
     ## What does this app do?
