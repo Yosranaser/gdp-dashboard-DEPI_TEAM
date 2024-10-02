@@ -10,17 +10,17 @@ with open(model_filename, 'rb') as file:
 def main():
     st.title("Churn Prediction")
 
-    # Input fields for 19 features (adjust based on actual features used during model training)
+    # Input fields for 19 features
     st.write("### Please provide the following details:")
 
-    # Example fields (you need to replace with actual features used during training)
+    # Input fields
     tenure = st.number_input("Tenure (months)", min_value=0, max_value=100)
     monthly_charges = st.number_input("Monthly Charges", min_value=0.0)
     total_charges = st.number_input("Total Charges", min_value=0.0)
     contract = st.selectbox("Contract Type", ['Month-to-month', 'One year', 'Two year'])
     paperless_billing = st.selectbox("Paperless Billing", ['Yes', 'No'])
     payment_method = st.selectbox("Payment Method", ['Electronic check', 'Mailed check', 'Bank transfer', 'Credit card'])
-    
+
     senior_citizen = st.selectbox("Is the customer a senior citizen?", ['Yes', 'No'])
     gender = st.selectbox("Gender", ['Male', 'Female'])
     partner = st.selectbox("Has a partner", ['Yes', 'No'])
@@ -35,7 +35,7 @@ def main():
     streaming_tv = st.selectbox("Streaming TV", ['Yes', 'No', 'No internet service'])
     streaming_movies = st.selectbox("Streaming Movies", ['Yes', 'No', 'No internet service'])
 
-    # Convert categorical data into numerical format (adjust mappings if necessary)
+    # Categorical data mappings
     contract_mapping = {'Month-to-month': 0, 'One year': 1, 'Two year': 2}
     payment_method_mapping = {
         'Electronic check': 0, 'Mailed check': 1, 'Bank transfer': 2, 'Credit card': 3
@@ -55,7 +55,7 @@ def main():
     streaming_tv_mapping = {'Yes': 1, 'No': 0, 'No internet service': 2}
     streaming_movies_mapping = {'Yes': 1, 'No': 0, 'No internet service': 2}
 
-    # Prepare the input array with all 19 features
+    # Prepare input array
     input_data = np.array([[tenure, monthly_charges, total_charges,
                             contract_mapping[contract], paperless_billing_mapping[paperless_billing],
                             payment_method_mapping[payment_method], senior_citizen_mapping[senior_citizen],
@@ -66,11 +66,11 @@ def main():
                             tech_support_mapping[tech_support], streaming_tv_mapping[streaming_tv],
                             streaming_movies_mapping[streaming_movies]]])
 
-    # Print the shape of input_data for debugging purposes
-    st.write(f"Input Data Shape: {input_data.shape}")
+    st.write(f"Input Data: {input_data}")
+    st.write(f"Input Data Shape: {input_data.shape}")  # Debugging step
     
     if st.button("Predict Churn"):
-        # Ensure that the input has 19 features
+        # Ensure input has 19 features
         if input_data.shape[1] == 19:
             prediction = model.predict(input_data)
             if prediction[0] == 1:
