@@ -3,11 +3,6 @@ import seaborn as sns
 import streamlit as st 
 
 import pickle
-
-
-
-
-
 with open('model (3).pkl', 'rb') as file:
     model = pickle.load(file)
 
@@ -22,7 +17,7 @@ feature_names = ['tenure', 'monthly_charges', 'total_charges', 'contract', 'pape
                  'device_protection', 'tech_support', 'streaming_tv', 'streaming_movies']
 
 # Create a DataFrame for easy plotting
-import pandas as pd
+importances = ['tenure', 'monthly_charges', 'total_charges', 'contract', 'paperless_billing']
 feature_importance_df = pd.DataFrame({
     'Feature': feature_names,
     'Importance': importances
