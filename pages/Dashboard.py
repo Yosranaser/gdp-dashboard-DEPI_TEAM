@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
-import streamlit as st
-with open('model (3).pkl', 'rb') as file:
+import streamlit as st 
+with open(https://github.com/Yosranaser/gdp-dashboard-DEPI_TEAM/blob/main/pages/model%20(3).pkl, 'rb') as file:
     model = pickle.load(file)
 importances = model.feature_importances_
 
