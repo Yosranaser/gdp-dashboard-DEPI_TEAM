@@ -31,15 +31,15 @@ card1, card2, card3, card4 = st.columns((2,2,2,4))
 #filtered_data = filter(airline, source, destination, add_info)
 
 # Cards Values
-flight_count = df['MultipleLines'].count()
-highest_Price = df['TotalCharges'].max()
-lowest_Price = df['TotalCharges'].min()
-top_airline = df['MultipleLines'].value_counts().idxmax()
+
+highest_TotalCharges = df['TotalCharges'].max()
+lowest_TotalCharges = df['TotalCharges'].min()
+
 # Show The Cards
-card1.metric("Flight Count", f"{flight_count}")
-card2.metric("Highest Price", f"{highest_Price}")
-card3.metric("Lowest Price", f"{lowest_Price}")
-card4.metric("Top Airline", f"{top_airline}")
+card1.metric("highest_TotalCharges", f"{highest_TotalCharges}")
+card2.metric("lowest_TotalCharges", f"{lowest_TotalCharges}")
+#card3.metric("Lowest Price", f"{lowest_Price}")
+#card4.metric("Top Airline", f"{top_airline}")
 
 # Dashboard Tabs
 tab1, tab2, tab3 = st.tabs(["🏠 Home", "📈 Insights", "🤖 Prediction"])
