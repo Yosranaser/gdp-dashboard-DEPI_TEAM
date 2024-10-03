@@ -18,7 +18,9 @@ with open('model (3).pkl', 'rb') as file:
 st.set_page_config(page_title="churn segmenation", page_icon="✈️", layout='wide')
 
 # Loading data
-df = pd.read_csv('WA_Fn-UseC_-Telco-Customer-Churn.csv')
+uploaded_file = st.file_uploader("Choose a file")
+if uploaded_file is not None:
+    df = pd.read_csv(uploaded_file)
 
 
 
