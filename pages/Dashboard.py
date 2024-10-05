@@ -10,8 +10,8 @@ import seaborn as sns
 import plotly.express as px
 
 import pickle
-with open('model (3).pkl', 'rb') as file:
-    model = pickle.load(file)
+#with open('model (3).pkl', 'rb') as file:
+    #model = pickle.load(file)
 
 # Now you can use 'model' in your app
 # Setting page configuration
