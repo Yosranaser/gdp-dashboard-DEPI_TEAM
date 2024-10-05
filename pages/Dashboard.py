@@ -30,7 +30,7 @@ else:
     st.write("Please upload a CSV file.")
 card1, card2, card3, card4 = st.columns((2,2,2,4))
 
-
+st.write(df.columns)
 # Filtered DataFrame
 #filtered_data = filter(airline, source, destination, add_info)
 
