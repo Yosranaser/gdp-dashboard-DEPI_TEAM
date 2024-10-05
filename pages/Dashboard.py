@@ -56,9 +56,10 @@ with tab1:
              "Churn refers to the percentage of customers that stop using a service over a certain period. "
              "By predicting churn, businesses can take action to retain customers and improve overall satisfaction.")
    
-    im1 = Image.open('https://images.app.goo.gl/hnxtHyNCeGiu3AqD8')
-    img5 = st
-    img5.image(im1)
+      image = Image.open('0_d58iZ6esNNcfntQ7.jpg')
+
+# Display the image in Streamlit
+    st.image(image, caption="Churn Prediction", use_column_width=True)
 
 # Data Analysis Section
 with tab2:
