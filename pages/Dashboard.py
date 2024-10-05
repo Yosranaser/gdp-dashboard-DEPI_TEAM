@@ -52,16 +52,16 @@ tab1, tab2, tab3 = st.tabs(["🏠 Home", "📈 Insights", "🤖 Prediction"])
 
 # Introduction Section
 with tab1:
-    st.write("In today's competitive business landscape, customer churn is a critical metric. "
-             "Churn refers to the percentage of customers that stop using a service over a certain period. "
-             "By predicting churn, businesses can take action to retain customers and improve overall satisfaction.")
-   
-      image = Image.open('0_d58iZ6esNNcfntQ7.jpg')
-
-# Display the image in Streamlit
-    st.image(image, caption="Churn Prediction", use_column_width=True)
-
-# Data Analysis Section
+       st.write("In today's competitive business landscape, customer churn is a critical metric. "
+                 "Churn refers to the percentage of customers that stop using a service over a certain period. "
+                 "By predicting churn, businesses can take action to retain customers and improve overall satisfaction.")
+       
+        image = Image.open('0_d58iZ6esNNcfntQ7.jpg')
+    
+    # Display the image in Streamlit
+        st.image(image, caption="Churn Prediction", use_column_width=True)
+    
+    # Data Analysis Section
 with tab2:
     st.subheader('Key Metrics & Data Analysis')
 
