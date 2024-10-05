@@ -56,7 +56,7 @@ with tab1:
              "Churn refers to the percentage of customers that stop using a service over a certain period. "
              "By predicting churn, businesses can take action to retain customers and improve overall satisfaction.")
    
-    im1 = Image.open('https://github.com/Yosranaser/gdp-dashboard-DEPI_TEAM/blob/main/pages/0_d58iZ6esNNcfntQ7.jpg')
+    im1 = Image.open('https://images.app.goo.gl/hnxtHyNCeGiu3AqD8')
     img5 = st
     img5.image(im1)
 
