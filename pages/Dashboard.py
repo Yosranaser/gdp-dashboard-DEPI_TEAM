@@ -17,14 +17,17 @@ import pickle
 # Setting page configuration
 st.set_page_config(page_title="churn segmenation", page_icon="✈️", layout='wide')
 
- #Loading data
-uploaded_file = st.file_uploader("Choose a file")
-#if uploaded_file is not None:
+uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
+
+# Check if a file is uploaded
+if uploaded_file is not None:
+    # Read the uploaded file into a DataFrame
     df = pd.read_csv(uploaded_file)
 
-#df = pd.read_csv('your_file_name.csv')
-
-# Information Cards
+    # Display the first few rows of the dataframe
+    st.write(df.head())
+else:
+    st.write("Please upload a CSV file.")
 card1, card2, card3, card4 = st.columns((2,2,2,4))
 
 
