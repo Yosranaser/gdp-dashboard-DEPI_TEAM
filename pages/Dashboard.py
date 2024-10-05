@@ -53,7 +53,7 @@ with tab1:
              "Churn refers to the percentage of customers that stop using a service over a certain period. "
              "By predicting churn, businesses can take action to retain customers and improve overall satisfaction.")
    
-    im1 = Image.open('R.jpg')
+    im1 = Image.open('R0_d58iZ6esNNcfntQ7.jpg')
     img5 = st
     img5.image(im1)
 
