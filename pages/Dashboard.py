@@ -91,7 +91,7 @@ with tab2:
         # Now pass the input data to the model
      try:
         churn_prediction = model.predict(input_data)
-        except ValueError as e:
+    except ValueError as e:
             print(f"Error during prediction: {e}")
     st.write("### Key Insights:")
     st.write("""
