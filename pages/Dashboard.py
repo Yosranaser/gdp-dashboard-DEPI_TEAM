@@ -62,7 +62,8 @@ import os
 try:
     image = Image.open('0_d58iZ6esNNcfntQ7.jpg')
 except FileNotFoundError:
-    print("Image file not found, please check the file path.")image = Image.open('0_d58iZ6esNNcfntQ7.jpg')
+    print("Image file not found, please check the file path.")
+   
     
   
 with tab2:
