@@ -56,12 +56,15 @@ with tab1:
                  "Churn refers to the percentage of customers that stop using a service over a certain period. "
                  "By predicting churn, businesses can take action to retain customers and improve overall satisfaction.")
        
-   image = Image.open('0_d58iZ6esNNcfntQ7.jpg')
+from PIL import Image
+import os
+
+try:
+    image = Image.open('0_d58iZ6esNNcfntQ7.jpg')
+except FileNotFoundError:
+    print("Image file not found, please check the file path.")image = Image.open('0_d58iZ6esNNcfntQ7.jpg')
     
-    # Display the image in Streamlit
-   st.image(image, caption="Churn Prediction", use_column_width=True)
-    
-    # Data Analysis Section
+  
 with tab2:
     st.subheader('Key Metrics & Data Analysis')
 
