@@ -92,7 +92,7 @@ with tab2:
      try:
         churn_prediction = model.predict(input_data)
     except ValueError as e:
-            print(f"Error during prediction: {e}")
+        print(f"Error during prediction: {e}")
     st.write("### Key Insights:")
     st.write("""
     1. **Tenure**: Customers with longer tenure are less likely to churn.
