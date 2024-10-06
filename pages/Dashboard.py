@@ -85,14 +85,14 @@ with tab2:
     fig = px.imshow(df[['tenure', 'MonthlyCharges', 'TotalCharges', 'Churn']].corr(), color_continuous_scale='RdBu_r', 
                     title='Correlation Heatmap of Key Features')
     st.plotly_chart(fig, use_container_width=True)
-    if input_data.ndim == 1:
-    input_data = np.expand_dims(input_data, axis=0)  # Reshape to 2D
-
-    # Now pass the input data to the model
-    try:
-        churn_prediction = model.predict(input_data)
-    except ValueError as e:
-        print(f"Error during prediction: {e}")
+        if input_data.ndim == 1:
+            input_data = np.expand_dims(input_data, axis=0)  # Reshape to 2D
+    
+        # Now pass the input data to the model
+        try:
+            churn_prediction = model.predict(input_data)
+        except ValueError as e:
+            print(f"Error during prediction: {e}")
     st.write("### Key Insights:")
     st.write("""
     1. **Tenure**: Customers with longer tenure are less likely to churn.
