@@ -89,7 +89,7 @@ with tab2:
         input_data = np.expand_dims(input_data, axis=0)  # Reshape to 2D
     
         # Now pass the input data to the model
-     try:
+    try:
         churn_prediction = model.predict(input_data)
     except ValueError as e:
         print(f"Error during prediction: {e}")
