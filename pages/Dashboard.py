@@ -25,8 +25,7 @@ if uploaded_file is not None:
 # Read the uploaded file into a DataFrame
   df = pd.read_csv(uploaded_file)
 
-    # Display the first few rows of the dataframe
-    st.write(df.head())
+  
 else:
     st.write("Please upload a CSV file.")
 card1, card2, card3, card4 = st.columns((2,2,2,4))
