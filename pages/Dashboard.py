@@ -97,7 +97,7 @@ with tab2:
 with tab3:
     st.subheader('Predict Customer Churn')
 
-    model = joblib.load('churn_prediction_model.p')  # Load your pre-trained model
+    model = joblib.load('model (3).pkl')  # Load your pre-trained model
     sc = StandardScaler()
 
     col1, col2 = st.columns((5, 5))
