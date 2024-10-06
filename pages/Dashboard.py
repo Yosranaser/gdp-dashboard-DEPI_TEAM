@@ -21,8 +21,9 @@ uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 
 # Check if a file is uploaded
 if uploaded_file is not None:
-    # Read the uploaded file into a DataFrame
-    df = pd.read_csv(uploaded_file)
+  
+# Read the uploaded file into a DataFrame
+  df = pd.read_csv(uploaded_file)
 
     # Display the first few rows of the dataframe
     st.write(df.head())
@@ -52,14 +53,14 @@ tab1, tab2, tab3 = st.tabs(["🏠 Home", "📈 Insights", "🤖 Prediction"])
 
 # Introduction Section
 with tab1:
-       st.write("In today's competitive business landscape, customer churn is a critical metric. "
+   st.write("In today's competitive business landscape, customer churn is a critical metric. "
                  "Churn refers to the percentage of customers that stop using a service over a certain period. "
                  "By predicting churn, businesses can take action to retain customers and improve overall satisfaction.")
        
-        image = Image.open('0_d58iZ6esNNcfntQ7.jpg')
+   image = Image.open('0_d58iZ6esNNcfntQ7.jpg')
     
     # Display the image in Streamlit
-        st.image(image, caption="Churn Prediction", use_column_width=True)
+   st.image(image, caption="Churn Prediction", use_column_width=True)
     
     # Data Analysis Section
 with tab2:
