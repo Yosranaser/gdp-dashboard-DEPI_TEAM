@@ -100,6 +100,5 @@ with tab2:
     3. **Total Charges**: Shows a moderate correlation with churn, but further analysis is needed.
     """)
 
-# Prediction Model Section
 
    
