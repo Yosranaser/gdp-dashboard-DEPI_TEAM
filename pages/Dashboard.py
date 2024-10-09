@@ -48,7 +48,7 @@ card2.metric("lowest_TotalCharges", f"{lowest_TotalCharges}")
 # Load the dataset
 
 
-tab1, tab2, tab3 = st.tabs(["🏠 Home", "📈 Insights"])
+tab1, tab2 = st.tabs(["🏠 Home", "📈 Insights"])
 
 # Introduction Section
 with tab1:
