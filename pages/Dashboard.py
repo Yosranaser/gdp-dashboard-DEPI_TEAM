@@ -102,33 +102,4 @@ with tab2:
 
 # Prediction Model Section
 with tab3:
-    st.subheader('Predict Customer Churn')
-
-    model = joblib.load('model (3).pkl')  # Load your pre-trained model
-    sc = StandardScaler()
-
-    col1, col2 = st.columns((5, 5))
-    with col1:
-        gender_pred = st.selectbox("Gender", ["Male", "Female"])
-        gender_pred = 1 if gender_pred == "Male" else 0
-        
-        senior_pred = st.selectbox("Senior Citizen", [0, 1])
-        partner_pred = st.selectbox("Partner", [0, 1])
-        dependents_pred = st.selectbox("Dependents", [0, 1])
-        tenure_pred = st.slider("Tenure (in months)", min_value=0, max_value=72, step=1)
-
-    with col2:
-        phone_service_pred = st.selectbox("Phone Service", [0, 1])
-        internet_service_pred = st.selectbox("Internet Service", [0, 1, 2])  # Assuming encoded values
-        online_security_pred = st.selectbox("Online Security", [0, 1])
-        monthly_charges_pred = st.number_input("Monthly Charges", min_value=0.0)
-
-    # Prepare input for model
-    input_data = sc.fit_transform([[gender_pred, senior_pred, partner_pred, dependents_pred, tenure_pred, 
-                                    phone_service_pred, internet_service_pred, online_security_pred, 
-                                    monthly_charges_pred]])
-
-    if st.button("Predict Churn"):
-        churn_prediction = model.predict(input_data)
-        st.metric("Churn Prediction", "Yes" if churn_prediction == 1 else "No")
-
+   
